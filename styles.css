@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neon-blue: #00f3ff;
+    --deep-purple: #6a11cb;
+    --mid-purple: #8a2be2;
+    --dark-bg: #0a0a0f;
+  }
+}
+
+@layer components {
+  .bg-neon-gradient {
+    background: linear-gradient(135deg, var(--deep-purple) 0%, var(--mid-purple) 50%, var(--neon-blue) 100%);
+  }
+
+  .bg-neon-gradient-hover:hover {
+    background: linear-gradient(135deg, var(--neon-blue) 0%, var(--mid-purple) 50%, var(--deep-purple) 100%);
+  }
+
+  .text-neon-glow {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.7), 0 0 20px rgba(0, 243, 255, 0.5);
+  }
+
+  .border-neon {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+  }
+
+  .bg-dark {
+    background-color: var(--dark-bg);
+  }
+}
+
+@layer utilities {
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 3s ease infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.8);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
